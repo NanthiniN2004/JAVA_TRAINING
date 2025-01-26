@@ -1,5 +1,7 @@
 ## Find Minimum and Maximum
+
 ````java[]
+
 public class Main
 {
 	public static void main(String[] args) {
@@ -25,7 +27,9 @@ public class Main
 
 
 ## Element found or not
+
 ~~~~java[]
+
 import java.util.*;
 public class Main
 {
@@ -54,6 +58,7 @@ public class Main
 
 
 ## Sort the given array
+
 ````java[]
 
 import java.util.*;
@@ -89,7 +94,9 @@ public class Main
 
 
 ## Find the second largest Element
+
 ````java[]
+
 import java.util.*;
 public class Main
 {
@@ -121,7 +128,9 @@ public class Main
 
 
 ## Remove the duplicate element
+
 ````java[]
+
 import java.util.*;
 public class Main
 {
@@ -150,7 +159,9 @@ public class Main
 
 
 ## Print the duplicate Element
+
 ````java[]
+
 import java.util.*;
 public class Main
 {
@@ -179,6 +190,7 @@ public class Main
 
 
 ## Merge the two array
+
 ````java[]
 
 import java.util.*;
@@ -215,6 +227,7 @@ public class Main
 
 
 ## PASCAL TRIANGLE
+
 ````java[]
 import java.util.*;
 public class Main{
