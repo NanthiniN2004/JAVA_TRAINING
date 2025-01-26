@@ -22,7 +22,9 @@ public class Main
 	
 	}
 ~~~~
-##Element found or not
+
+
+## Element found or not
 ~~~~java[]
 import java.util.*;
 public class Main
@@ -49,7 +51,9 @@ public class Main
 }
 
 ````
-##Sort the given array
+
+
+## Sort the given array
 ````java[]
 
 import java.util.*;
@@ -82,7 +86,9 @@ public class Main
 }
 
 ````
-##Find the second largest Element
+
+
+## Find the second largest Element
 ````java[]
 import java.util.*;
 public class Main
@@ -112,7 +118,9 @@ public class Main
 }
 
 ````
-##Remove the duplicate element
+
+
+## Remove the duplicate element
 ````java[]
 import java.util.*;
 public class Main
@@ -139,7 +147,9 @@ public class Main
 }
 
 ````
-##Print the duplicate Element
+
+
+## Print the duplicate Element
 ````java[]
 import java.util.*;
 public class Main
@@ -164,8 +174,11 @@ public class Main
 	
 	}
 }
+
 ````
-##Merge the two array
+
+
+## Merge the two array
 ````java[]
 
 import java.util.*;
@@ -199,7 +212,9 @@ public class Main
 	}
 }
 ````
-##PASCAL TRIANGLE
+
+
+## PASCAL TRIANGLE
 ````java[]
 import java.util.*;
 public class Main{
