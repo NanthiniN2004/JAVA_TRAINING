@@ -331,6 +331,19 @@ public class Main{
     }
 }
 
+output
+Welcome to the Login System!
+Enter your username: admin
+Enter your password: pass123
+Validation Results:
+Login failed (case-sensitive comparison).
+Login failed (case-insensitive username comparison).
+
+Debugging Info:
+Entered Username (after trim): 'admin'
+Entered Password (after trim): 'pass123'
+
+
 ````
 
 
