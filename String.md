@@ -95,4 +95,76 @@ public class Main
 }
 
 ````
+## lastIndexOf Method
+
+````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="hello world";
+	    String str2="HELLO WORLD";
+
+	 System.out.println(str1.lastIndexOf('l'));
+	 
+
+	}
+}
+````
+
+## startWith and endWith Method
+
+````java[]
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="i am Nandhu";
+	  
+
+	 System.out.println(str1.startsWith("i"));
+	 System.out.println(str1.endsWith("Nandhu"));
+
+	}
+}
+````
+## SubString Method
+
+````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="i am Nandhu";
+	  
+
+	 System.out.println(str1.substring(4));
+	
+
+	}
+}
+
+````
+
+## replace Method
+
+````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="i am Nandhu";
+	  
+
+	 System.out.println(str1.replace('a','e'));
+	
+
+	}
+}
+````
+
+## replaceAll Method
+
+````java[]
+
+
 
