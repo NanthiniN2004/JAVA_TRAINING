@@ -231,7 +231,109 @@ output:
 convert character to array Nanthini
 
 ````
+## In a Text Editor Application. If you want to find and replace word in Text using replace,replaceAll,Matches
+````java[]
+
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the text:");
+        String text = scanner.nextLine();
+
+    
+        System.out.println("Enter the word to find:");
+        String find = scanner.nextLine();
+
+        System.out.println("Enter the word to replace:");
+        String replace = scanner.nextLine();
+
+        String replacedText = text.replace(find, replace);
+        System.out.println("After Replace the character");
+        System.out.println(replacedText);
+
+    
+        String regex = "\\b" + find + "\\b"; 
+        String replacedalltext = text.replaceAll(regex, replace);
+        System.out.println("Using replaceAll method:");
+        System.out.println(replacedalltext);
+        
+        System.out.println("Using matches method:");
+        if (text.matches(".*\\b" + find + "\\b.*")) {
+            System.out.println("The word \"" + find + "\" was found in the text.");
+        } else {
+            System.out.println("The word \"" + find + "\" was not found in the text.");
+        }
+
+        scanner.close();
+    }
+}
+
+output:
+Enter the text:
+java is object oriented programming language.
+Enter the word to find:
+object
+Enter the word to replace:
+obj
+After Replace the character
+java is obj oriented programming language.
+Using replaceAll method:
+java is obj oriented programming language.
+Using matches method:
+The word "object" was found in the text.
 ````
+
+## develop a login system and need to validate the user credential using string method stim, equal, equalignorecase
+
+````java[]
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args) {
+    
+        String username = "Admin";
+        String password = "Pass123";
+
+        Scanner scanner = new Scanner(System.in);
+
+    
+        System.out.println("Welcome to the Login System!");
+        System.out.print("Enter your username: ");
+        String un = scanner.nextLine().trim(); 
+
+        System.out.print("Enter your password: ");
+        String pw= scanner.nextLine().trim(); 
+
+        
+        System.out.println("Validation Results:");
+
+        
+        if (un.equals(username) && pw.equals(password)) {
+            System.out.println("Login successful (exact match with equals).");
+        } else {
+            System.out.println("Login failed (case-sensitive comparison).");
+        }
+
+        if (un.equalsIgnoreCase(username) && pw.equals(password)) {
+            System.out.println("Login successful (username case-insensitive with equalsIgnoreCase).");
+        } else {
+            System.out.println("Login failed (case-insensitive username comparison).");
+        }
+
+        System.out.println("\nDebugging Info:");
+        System.out.println("Entered Username (after trim): '" + un + "'");
+        System.out.println("Entered Password (after trim): '" + pw + "'");
+
+        scanner.close();
+    }
+}
+
+````
+
+
 
 
 
