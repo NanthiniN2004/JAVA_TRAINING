@@ -186,6 +186,34 @@ Reversed a String  uhdnaN ma i
 
 ````
 
+## Find the occurance of a character in a String
+
+````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="i am Nandhu";
+	    char ch='a';
+	    int count=0;
+	    for(int i=0;i<str1.length();i++){
+	        if(str1.charAt(i)==ch){
+	            count++;
+	        }
+	    }
+
+	 System.out.println("Count of character "+ count);
+	
+
+	}
+}
+output:
+Count of character 2
+
+````
+
+
+
 
 
 
