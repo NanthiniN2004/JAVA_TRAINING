@@ -211,8 +211,27 @@ output:
 Count of character 2
 
 ````
-## 
+## convert character to String
 
+````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    char[] arr={'N','a','n','t','h','i','n','i'};
+	    String str=new String(arr);
+	    System.out.println("convert character to array "+str);
+
+	
+
+	}
+}
+
+output:
+convert character to array Nanthini
+
+````
+````
 
 
 
