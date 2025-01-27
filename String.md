@@ -162,9 +162,33 @@ public class Main
 }
 ````
 
-## replaceAll Method
+## Reverse a String
 
 ````java[]
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="i am Nandhu";
+	    String reversed=" ";
+	    for(int i=str1.length()-1;i>=0;i--){
+	        reversed+=str1.charAt(i);
+	    }
+
+	 System.out.println("Reversed a String "+ reversed);
+	
+
+	}
+}
+
+output:
+Reversed a String  uhdnaN ma i
+
+````
+
+
+
+
 
 
 
