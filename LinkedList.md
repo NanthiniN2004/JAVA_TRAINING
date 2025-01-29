@@ -94,9 +94,9 @@ class LinkedList{
         Node temp=head;                      //Insert Specific Position
         for(int i=0;i<pos-1;i++){
             temp=temp.next;
+}
             newnode.next=temp.next;
             temp.next=newnode;
-        }
     }
 }
 
