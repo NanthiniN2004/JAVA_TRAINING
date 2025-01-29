@@ -91,7 +91,7 @@ class LinkedList{
     
   public void specificPosition(int pos,int data){
         Node newnode=new Node(data);
-        Node temp=head;                      //Insert Specific Position
+        Node temp=head;                      //Insert at Specific Position
         for(int i=0;i<pos-1;i++){
             temp=temp.next;
 }
@@ -159,7 +159,7 @@ class LinkedList{
     
   public void specificPosition(int pos,int data){
         Node newnode=new Node(data);
-        Node temp=head;                      //Insert Specific Position
+        Node temp=head;                      //Insert at Specific Position
         for(int i=0;i<pos-1;i++){
             temp=temp.next;
         } 
@@ -168,13 +168,13 @@ class LinkedList{
             
     }
     public void deleteAtBegin(){
-        if(head !=null){                // Delete the Element Beginnig
+        if(head !=null){                // Delete at Element Beginnig
         head=head.next;
       }
     }
     public void deleteAtEnd(){
         Node temp=head;
-        while(temp.next.next!=null){        // Delete End position
+        while(temp.next.next!=null){        // Delete at End position
             temp=temp.next;
         }
         temp.next=null;
