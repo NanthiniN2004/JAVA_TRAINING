@@ -46,7 +46,7 @@ class Main{
 }
 
 ````
-##  LinkedList Insertion(Begin,End,Specific Position)
+##  Singly LinkedList Insertion(Begin,End,Specific Position)
 
 ````java[]
 
@@ -115,7 +115,7 @@ class Main{
 
 
 ````
-## LinkedList Deletion Operation(Beginning.Ending,Specific Position)
+##  Singly LinkedList Deletion Operation(Beginning.Ending,Specific Position)
 
 ````java[]
 
@@ -206,3 +206,192 @@ class Main{
            link.display();
     }
 }
+
+
+````
+
+## DOUBLY LINKED LIST(INSERT AT BEGIN,INSERT AT END)
+
+````java[]
+
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+class DLL{
+    Node head,tail;
+    public void insertAtBegin(int data)
+    {
+        Node newnode=new Node(data);
+        if(head==null){                           //Insert the element Beginning
+            head=newnode;
+            tail=newnode;
+        }
+        else{
+            newnode.next=head;
+            head.prev=newnode;
+            head=newnode;
+            
+        }
+    }
+    public void insertAtEnd(int data){
+        Node newnode=new Node(data);
+        if(tail==null)
+        {
+            head=tail=newnode;                     /// Insert the element in End position
+            
+        }
+        else{
+            tail.next=newnode;
+            newnode.prev=tail;
+            tail=newnode;
+            
+        }
+    }
+   
+    public void display(){
+        Node temp=head;
+    if(temp==null){
+        System.out.println("List is Empty");
+    }
+    else{
+        while(temp!=null){
+            System.out.print(temp.data+"<-->");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+        
+    }
+    
+} 
+public class Main{
+    public static void main(String args[]){
+        DLL obj=new DLL();
+        obj.insertAtBegin(100);
+       obj.insertAtBegin(200);
+       obj.insertAtBegin(300);
+       obj.insertAtEnd(500);
+       obj.insertAtEnd(400);
+       obj.display();
+    }
+}
+
+output:
+
+300<-->200<-->100<-->500<-->400
+
+
+## DOUBLY LINKED LIST (DELETION AT BEGIN,DELETION AT END)
+
+````java[]
+
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+class DLL{
+    Node head,tail;
+    public void insertAtBegin(int data)
+    {
+        Node newnode=new Node(data);
+        if(head==null){                           //Insert the element Beginning
+            head=newnode;
+            tail=newnode;
+        }
+        else{
+            newnode.next=head;
+            head.prev=newnode;
+            head=newnode;
+            
+        }
+    }
+    public void insertAtEnd(int data){
+        Node newnode=new Node(data);
+        if(tail==null)
+        {
+            head=tail=newnode;                     /// Insert the element in End position
+            
+        }
+        else{
+            tail.next=newnode;
+            newnode.prev=tail;
+            tail=newnode;
+            
+        }
+    }
+    public void deleteAtBegin(){
+        if(head==null)
+        {
+            System.out.println("List is Empty");
+        }
+        if(head==tail){
+            head=tail=null;
+        }
+        else{
+            head=head.next;
+            head.prev=null;
+        }
+    }
+    
+    public void deleteAtEnd(){
+        if(head==null)
+        {
+            System.out.println("List is Empty");
+        }
+        if(head==tail){
+            head=tail=null;
+        }
+        else{
+            tail=tail.prev;
+            tail.next=null;
+        }
+    }
+    public void display(){
+        Node temp=head;
+    if(temp==null){
+        System.out.println("List is Empty");
+    }
+    else{
+        while(temp!=null){
+            System.out.print(temp.data+"<-->");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+        
+    }
+    
+} 
+public class Main{
+    public static void main(String args[]){
+        DLL obj=new DLL();
+        obj.insertAtBegin(100);
+       obj.insertAtBegin(200);
+       obj.insertAtBegin(300);
+       obj.insertAtEnd(500);
+       obj.insertAtEnd(400);
+   obj.deleteAtBegin();
+       obj.deleteAtEnd();
+       obj.display();
+    }
+}
+
+
+OUTPUT:
+
+200<-->100<-->500<
+
+````
