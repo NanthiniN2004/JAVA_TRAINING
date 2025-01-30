@@ -132,6 +132,29 @@ public class Main
 
 ````
 
+## 
+````java[]
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int  second=s.nextInt();
+	  
+	   int remainsecond=second%3600;
+	   
+	   System.out.println(second/3600);
+	   System.out.println(remainsecond/60);
+	   System.out.println(remainsecond%60);
+           if(hour>=24){
+	      int days=hour/24;
+	      System.out.println(days+"days");
+	  }
+	}
+}
+
+````
 
 
 
