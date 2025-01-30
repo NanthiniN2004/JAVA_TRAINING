@@ -377,6 +377,16 @@ class DLL{
             tail.next=null;
         }
     }
+
+  public void deleteAtSpecific(int pos){
+        Node current=head;
+        for(int i=0;i<pos;i++){
+            current=current.next;
+        }
+
+        current.prev.next=current.next;
+        current.next.prev=current.prev;
+    }
     public void display(){
         Node temp=head;
     if(temp==null){
@@ -401,15 +411,12 @@ public class Main{
        obj.insertAtBegin(300);
        obj.insertAtEnd(500);
        obj.insertAtEnd(400);
-   obj.deleteAtBegin();
+      obj.deleteAtBegin();
+      obj.deleteAtSpecific(2);
        obj.deleteAtEnd();
        obj.display();
     }
 }
 
-
-OUTPUT:
-
-200<-->100<-->500<
 
 ````
