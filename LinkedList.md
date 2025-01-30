@@ -520,15 +520,16 @@ class DLL{
         current.next.prev=current.prev;
     }
     
-    public void reverse(){
-        Node current=head;
-        Node next=null;
-        Node prev=null;
-        while(current!=null){
-            next=current.next;
-            current.next=prev;
-            prev=current;
-            current=next;
+    public void reverse(){                  |  public void reverse()
+        Node current=head;                  |  {
+        Node next=null;                     |  Node temp=tail;
+        Node prev=null;                     |   while(temp!=null)
+                                            |    {  
+        while(current!=null){               |      System.out.println(temp.data);
+            next=current.next;              |      temp=temp.prev;
+            current.next=prev;              |     }
+            prev=current;                   |    }
+            current=next;                   |
         }
         head=prev;
     }
