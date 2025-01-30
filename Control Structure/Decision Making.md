@@ -109,3 +109,29 @@ public class Main
 }
 
 ````
+
+## 
+```java[]
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int  by=s.nextInt();
+	    int  cy=s.nextInt();
+	    if(by>cy)
+	    {
+	        System.out.println((100-by)+cy);
+	    }
+	    else{
+	        System.out.println(cy-by);
+	    }
+	}
+}
+
+````
+
+
+
+
