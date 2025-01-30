@@ -262,7 +262,7 @@ class DLL{
         Node current=head;
         Node temp=null;
         Node newnode=new Node(data);
-        for(int i=0;i<pos-1;i++){
+        for(int i=0;i<pos-1;i++){                 ///Insert At Specific Position
             current=current.next;
         }
          temp=current.next;
@@ -277,7 +277,7 @@ class DLL{
     if(temp==null){
         System.out.println("List is Empty");
     }
-    else{
+    else{                                                  //Display method
         while(temp!=null){
             System.out.print(temp.data+"<-->");
             temp=temp.next;
@@ -381,17 +381,18 @@ class DLL{
   public void deleteAtSpecific(int pos){
         Node current=head;
         for(int i=0;i<pos;i++){
-            current=current.next;
+            current=current.next;                          //Delete the Specific Position
         }
 
         current.prev.next=current.next;
         current.next.prev=current.prev;
     }
+
     public void display(){
         Node temp=head;
     if(temp==null){
         System.out.println("List is Empty");
-    }
+    }                                                        //Display Method
     else{
         while(temp!=null){
             System.out.print(temp.data+"<-->");
