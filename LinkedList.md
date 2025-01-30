@@ -229,7 +229,7 @@ class DLL{
     public void insertAtBegin(int data)
     {
         Node newnode=new Node(data);
-        if(head==null){                           //Insert the element Beginning
+        if(head==null){                           //Insert the element in Beginning
             head=newnode;
             tail=newnode;
         }
@@ -307,7 +307,7 @@ class DLL{
     public void insertAtBegin(int data)
     {
         Node newnode=new Node(data);
-        if(head==null){                           //Insert the element Beginning
+        if(head==null){                           //Insert the element  in Beginning
             head=newnode;
             tail=newnode;
         }
@@ -338,7 +338,7 @@ class DLL{
             System.out.println("List is Empty");
         }
         if(head==tail){
-            head=tail=null;
+            head=tail=null;                       //Delete the  Element in Beginning
         }
         else{
             head=head.next;
@@ -351,7 +351,7 @@ class DLL{
         {
             System.out.println("List is Empty");
         }
-        if(head==tail){
+        if(head==tail){                                   // Delete the element in End position
             head=tail=null;
         }
         else{
