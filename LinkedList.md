@@ -26,6 +26,8 @@ class LinkedList{
         }
     }
 
+
+
     
     public void display()
     {
@@ -254,7 +256,22 @@ class DLL{
             
         }
     }
-   
+
+
+ public void insertAtSpecific(int pos,int data){
+        Node current=head;
+        Node temp=null;
+        Node newnode=new Node(data);
+        for(int i=0;i<pos-1;i++){
+            current=current.next;
+        }
+         temp=current.next;
+         temp.prev=current;
+         current.next=newnode;
+         newnode.prev=current;
+         newnode.next=temp;
+         temp.prev=newnode;
+    }
     public void display(){
         Node temp=head;
     if(temp==null){
@@ -279,13 +296,14 @@ public class Main{
        obj.insertAtBegin(300);
        obj.insertAtEnd(500);
        obj.insertAtEnd(400);
+       obj.insertAtSpecific(2,250);
        obj.display();
     }
 }
 
 output:
 
-300<-->200<-->100<-->500<-->400
+300<-->200<-->250<-->100<-->500<-->400<-->
 
 
 ## DOUBLY LINKED LIST (DELETION AT BEGIN,DELETION AT END)
