@@ -569,8 +569,9 @@ public class Main{
 OUTPUT
 400<-->500<-->100<-->250<-->200<-->300
 
+````
 
-## SEARCH THE VALUE
+## SEARCH THE VALUE (DOUBLY LINKED LISTS)
 
 ````java[]
 
