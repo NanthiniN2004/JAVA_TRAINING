@@ -23,12 +23,12 @@ public class Main
 	}
 	
 	}
-~~~~
+````
 
 
 ## Element found or not
 
-~~~~java[]
+````java[]
 
 import java.util.*;
 public class Main
