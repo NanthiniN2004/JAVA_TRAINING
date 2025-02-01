@@ -173,7 +173,8 @@ public class Main
 	  for(int i=0;i<n;i++){
 	      a[i]=s.nextInt();
 	  }
-	
+
+          Arrays.sort(a);
 	  for(int i=0;i<n-1;i++){
 	   if(a[i]==a[i+1]){
 	 	  System.out.println("duplicate element"+a[i]);
