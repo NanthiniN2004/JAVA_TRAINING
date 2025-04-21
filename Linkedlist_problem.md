@@ -120,4 +120,118 @@ After rotate the linkedlist
 
 `````
 
+## FIND THE NTH NODE FROM THE LINKEDLIST
+````JAVA[]
+
+
+import java.util.*;
+
+class Node
+{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+}
+class Linkedlist{
+	Node head,tail;
+	public void insertatbegin(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+		}
+		else{
+		    newnode.next=head;
+		head=newnode;
+		}
+		
+		
+	}
+	public void insertatend(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+			tail=newnode;
+		}
+		else{
+		tail.next=newnode;
+		tail=newnode;
+		}
+	}
+	
+	public int nthnode(Node head,int N) {
+	    int len=0;
+		Node temp=head;
+		while(temp !=null)
+		{
+			len++;
+			temp=temp.next;
+		}
+		if(len<N)
+		{
+		    return -1;
+		}
+		temp=head;
+		for(int i=1;i<len-N+1;i++)
+		{
+		    temp=temp.next;
+		}
+		return temp.data;
+	}
+
+	public void display() {
+		Node temp=head;
+		while(temp !=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+
+}
+public class Main {
+
+	public static void main(String[] args) {
+	  Scanner s=new Scanner(System.in);
+	  Linkedlist obj=new Linkedlist();
+	  while(true)
+	  {
+		  int val=s.nextInt();
+		  if(val==-1)
+		  {
+			  break;
+		  }
+		  obj.insertatbegin(val);
+	  }
+	  obj.display();
+	  System.out.println("\nEnter the N value");
+	  int N=s.nextInt();
+	  System.out.println("Nth Node value "+ obj.nthnode(obj.head,N));
+	
+
+	}
+
+}
+
+output:
+
+4
+3
+2
+1
+-1
+1 2 3 4 
+Enter the N value
+3
+Nth Node value 2
+
+`````
+
 
