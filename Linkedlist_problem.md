@@ -398,36 +398,6 @@ class Sll {
 		}
 	}
 
-	/*public Node sortlist(Node head) {
-		if (head == null || head.next == null) {
-			return head;
-		}
-
-		Node zeron = new Node(0);
-		Node onen = new Node(0);
-		Node twon = new Node(0);
-		Node zero = zeron, one = onen, two = twon;
-
-		Node temp = head;
-		while (temp != null) {
-			if (temp.data == 0) {
-				zero.next = temp;
-				zero = zero.next;
-			} else if (temp.data == 1) {
-				one.next = temp;
-				one = one.next;
-			} else {
-				two.next = temp;
-				two = two.next;
-			}
-			temp = temp.next;
-		}
-		zero.next = (onen.next != null) ? onen.next : twon.next;
-		one.next = twon.next;
-		two.next = null;
-
-		return zeron.next;
-	}*/
 	public List<Node> merge(Node head1,Node head2)
 	{
 		Node temp1=head1;
@@ -502,4 +472,149 @@ After merge the element
 1 4 2 5 3 6 7 8
 
 `````
+## Merge two sorted linked lists
+````java[]
+
+package sll;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class Sll {
+	Node head, tail;
+
+	public void insertatbegin(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			newnode.next = head;
+			head = newnode;
+		}
+	}
+
+	public void insertatend(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			tail.next = newnode;
+			tail = newnode;
+		}
+	}
+
+	public void display(Node head) {
+		Node cur = head;
+		while (cur != null) {
+			System.out.print(cur.data + " ");
+			cur = cur.next;
+		}
+	}
+
+	public Node mergeSorted(Node head1,Node head2)
+	{
+		Node dummy=new Node(0);
+		Node temp=dummy;
+		while(head1 !=null && head2 !=null)
+		{
+			if(head1.data<head2.data)
+			{
+				temp.next=head1;
+				head1=head1.next;
+			}
+			else {
+				temp.next=head2;
+				head2=head2.next;
+			}
+			temp=temp.next;
+		}
+		if(head1 !=null)
+		{
+			temp.next=head1;
+		}
+		else {
+			temp.next=head2;
+		}
+		return dummy.next;
+	}
+	public List<Node> mergealterposition(Node head1,Node head2)
+	{
+		Node temp1=head1;
+		Node temp2=head2;
+		
+		while(temp1!=null && temp2!=null)
+		{
+			Node ptr1=temp1.next;
+			Node ptr2=temp2.next;
+			temp2.next=temp1.next;
+			temp1.next=temp2;
+			temp1=ptr1;
+			temp2=ptr2;
+			
+					
+		}
+		return Arrays.asList(head1, temp2);
+		
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Sll obj = new Sll();
+        System.out.println("Enter the element list1");
+		while (true) {
+			int val = s.nextInt();
+			if (val == -1) break;
+			obj.insertatend(val); 
+		}
+		Sll obj1 = new Sll();
+		System.out.println("Enter the element list2");
+		while (true) {
+			int val1 = s.nextInt();
+			if (val1 == -1) break;
+			obj1.insertatend(val1); 
+		}
+
+		System.out.println("\nAfter insert the element list 1");
+		obj.display(obj.head);
+		System.out.println("\nAfter insert the element list 2");
+		obj1.display(obj1.head);
+       System.out.println("\nAfter merge the element");
+	    obj.mergeSorted(obj.head,obj1.head);
+	    obj.display(obj.head);
+	}
+}
+
+
+OUTPUT:
+
+Enter the element list1
+5
+10
+15
+40
+-1
+Enter the element list2
+2
+3
+20
+-1
+
+After insert the element list 1
+5 10 15 40 
+After insert the element list 2
+2 3 20 
+After merge the element
+5 10 15 20 40
+
+````
+
 
