@@ -320,7 +320,7 @@ public class Main {
 		while (true) {
 			int val = s.nextInt();
 			if (val == -1) break;
-			obj.insertatend(val); // or insertatbegin(val)
+			obj.insertatend(val); 
 		}
 
 		System.out.println("\nAfter insert the element");
@@ -614,6 +614,366 @@ After insert the element list 2
 2 3 20 
 After merge the element
 5 10 15 20 40
+
+````
+
+## Delete last occurrence of an item from linked list
+````java[]
+
+package sll;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class Sll {
+	Node head, tail;
+
+	public void insertatbegin(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			newnode.next = head;
+			head = newnode;
+		}
+	}
+
+	public void insertatend(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			tail.next = newnode;
+			tail = newnode;
+		}
+	}
+
+	public void display(Node head) {
+		Node cur = head;
+		while (cur != null) {
+			System.out.print(cur.data + " ");
+			cur = cur.next;
+		}
+	}
+	public Node deleteatbegin(Node head)
+	{
+		if(head !=null)
+		{
+		Node temp=head;
+		head=head.next;
+		temp=null;
+		}
+		return head;
+	}
+	
+	public Node deleteatend(Node head)
+	{
+		if(head==null)
+		{
+			return null;
+		}
+		if(head.next==null)
+		{
+			return null;
+		}
+		Node temp=head;
+		while(temp.next.next !=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=null;
+		return head;
+	}
+public Node lastoccurence(Node head,int key)
+{
+	Node last=null,lastprev=null,prev=null;
+	Node curr=head;
+	while(curr!=null)
+	{
+		if(curr.data==key)
+		{
+			lastprev=prev;
+			last=curr;
+		}
+		prev=curr;
+		curr=curr.next;
+	}
+	if(last !=null)
+	{
+		if(lastprev !=null)
+		{
+			lastprev.next=last.next;
+		}
+		else {
+			head=head.next;
+		}
+	}
+	return head;
+}
+	public Node deleteatspecific(Node head,int pos)
+	{
+		Node temp=head;
+		Node prev=null;
+		if(temp==null)
+		{
+			return head;
+		}
+		if(pos==1)
+		{
+			head=temp.next;
+			return head;
+		}
+		for(int i=1;temp!=null && i<pos;i++)
+		{
+			prev=temp;
+			temp=temp.next;
+		}
+		if(temp!=null)
+		{
+			prev.next=temp.next;
+		}
+		else {
+			System.out.println("Element not found");
+		}
+		return head;
+		
+	}
+	
+	
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Sll obj = new Sll();
+        System.out.println("Enter the element list1");
+		while (true) {
+			int val = s.nextInt();
+			if (val == -1) break;
+			obj.insertatend(val); 
+		}
+
+		System.out.println("\nAfter insert the element list 1");
+		obj.display(obj.head);
+		System.out.println("\nEnter the key value");
+		int pos=s.nextInt();
+		System.out.println("After delete the last occurence  element");
+		obj.lastoccurence(obj.head,pos);
+		
+	    obj.display(obj.head);
+	}
+}
+
+OUTPUT:
+
+Enter the element list1
+1
+2
+3
+1
+2
+4
+-1
+
+After insert the element list 1
+1 2 3 1 2 4 
+Enter the key value
+2
+After delete the last occurence  element
+1 2 3 1 4
+
+`````
+    
+  ##   Remove Duplicates from a Sorted Linked List 
+
+  ````java[]
+package sll;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class Sll {
+	Node head, tail;
+
+	public void insertatbegin(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			newnode.next = head;
+			head = newnode;
+		}
+	}
+
+	public void insertatend(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			tail.next = newnode;
+			tail = newnode;
+		}
+	}
+
+	public void display(Node head) {
+		Node cur = head;
+		while (cur != null) {
+			System.out.print(cur.data + " ");
+			cur = cur.next;
+		}
+	}
+	public Node deleteatbegin(Node head)
+	{
+		if(head !=null)
+		{
+		Node temp=head;
+		head=head.next;
+		temp=null;
+		}
+		return head;
+	}
+	
+	public Node deleteatend(Node head)
+	{
+		if(head==null)
+		{
+			return null;
+		}
+		if(head.next==null)
+		{
+			return null;
+		}
+		Node temp=head;
+		while(temp.next.next !=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=null;
+		return head;
+	}
+public Node lastoccurence(Node head,int key)
+{
+	Node last=null,lastprev=null,prev=null;
+	Node curr=head;
+	while(curr!=null)
+	{
+		if(curr.data==key)
+		{
+			lastprev=prev;
+			last=curr;
+		}
+		prev=curr;
+		curr=curr.next;
+	}
+	if(last !=null)
+	{
+		if(lastprev !=null)
+		{
+			lastprev.next=last.next;
+		}
+		else {
+			head=head.next;
+		}
+	}
+	return head;
+}
+	public Node deleteatspecific(Node head,int pos)
+	{
+		Node temp=head;
+		Node prev=null;
+		if(temp==null)
+		{
+			return head;
+		}
+		if(pos==1)
+		{
+			head=temp.next;
+			return head;
+		}
+		for(int i=1;temp!=null && i<pos;i++)
+		{
+			prev=temp;
+			temp=temp.next;
+		}
+		if(temp!=null)
+		{
+			prev.next=temp.next;
+		}
+		else {
+			System.out.println("Element not found");
+		}
+		return head;
+		
+	}
+	
+
+	public Node removeduplicate(Node head)
+	{
+		Node temp=head;
+		while(temp!=null && temp.next!=null)
+		{
+			if(temp.data==temp.next.data)
+			{
+				temp.next=temp.next.next;
+			}
+			else {
+				temp=temp.next;
+			}
+		}
+		return head;
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Sll obj = new Sll();
+        System.out.println("Enter the element list1");
+		while (true) {
+			int val = s.nextInt();
+			if (val == -1) break;
+			obj.insertatend(val); 
+		}
+		Sll obj1 = new Sll();
+		System.out.println("\nAfter insert the element list 1");
+		obj.display(obj.head);
+		System.out.println("\nAfter delete the deplicate elements");
+		obj.removeduplicate(obj.head);
+		
+	    obj.display(obj.head);
+	}
+}
+
+
+OUTPUT:
+Enter the element list1
+1
+2
+2
+3
+3
+3
+4
+-1
+
+After insert the element list 1
+1 2 2 3 3 3 4 
+After delete the deplicate elements
+1 2 3 4
 
 ````
 
