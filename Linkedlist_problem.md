@@ -977,4 +977,110 @@ After delete the deplicate elements
 
 ````
 
+## Pairwise Swap Elements of a given Linked List
 
+````java[]
+
+package sll;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class Sll {
+	Node head, tail;
+
+	public void insertatbegin(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			newnode.next = head;
+			head = newnode;
+		}
+	}
+
+	public void insertatend(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = tail = newnode;
+		} else {
+			tail.next = newnode;
+			tail = newnode;
+		}
+	}
+
+	public void display(Node head) {
+		Node cur = head;
+		while (cur != null) {
+			System.out.print(cur.data + " ");
+			cur = cur.next;
+		}
+	}		
+	public void deletewithouthead(Node pos)
+	{
+		if(pos==null)
+		{
+			return;
+		}
+		else {
+			if(pos.next==null)
+			{
+				System.out.println("Empty");
+				return;
+			}
+		}
+		pos.data=pos.next.data;
+		pos.next=pos.next.next;
+	}
+	public Node pairwiseswap(Node head)
+	{
+		Node temp=head;
+		while(temp!=null && temp.next!=null)
+		{
+			int cur=temp.data;
+			temp.data=temp.next.data;
+			temp.next.data=cur;
+		    temp=temp.next.next;
+		}
+		return head;
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Sll obj = new Sll();
+        System.out.println("Enter the element list1");
+		while (true) {
+			int val = s.nextInt();
+			if (val == -1) break;
+			obj.insertatend(val); 
+		}
+		Sll obj1 = new Sll();
+		System.out.println("\nAfter swap the element ");
+	    obj.display(obj.head);
+	}
+}
+
+OUTPUT:
+Enter the element list1
+1
+2
+3
+4
+5
+6
+-1
+
+After insert the element list 1
+1 2 3 4 5 6 
+After swap the element 
+2 1 4 3 6 5 
+`````
