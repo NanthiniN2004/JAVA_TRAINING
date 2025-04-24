@@ -1084,3 +1084,113 @@ After insert the element list 1
 After swap the element 
 2 1 4 3 6 5 
 `````
+## Delete all occurrences of a given key in a linked list
+
+````java[]
+
+import java.util.*;
+class Node{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+		}
+}
+ class Linkedlist
+{  
+	 Node head;
+	public void insertatbegin(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+		}
+		else
+		{
+			newnode.next=head;
+			head=newnode;
+		}
+	}
+	public Node deletealloccurence(Node head,int data)
+	{
+		Node prev=null;
+		Node cur=head;
+		while(cur!=null)
+		{
+
+			if(cur.data==data)
+			{
+			if(prev==null){
+			    head=cur.next;
+			}
+			
+			else{
+			   prev.next=cur.next;
+			}
+			cur=cur.next;
+			}
+			else{
+			    prev=cur;
+			    cur=cur.next;
+			}
+			
+		}
+		return head;
+	}
+	
+	public void display()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		Linkedlist obj=new Linkedlist();
+		System.out.println("Enter the element");
+		while(true)
+		{
+			int val=s.nextInt();
+		
+			if(val==-1)
+			{
+				break;
+			}
+		  obj. insertatbegin(val);
+		}
+		obj.display();
+		System.out.println("\nEnter key element");
+		int key=s.nextInt();
+    	obj.head=obj.deletealloccurence(obj.head, key);
+		System.out.println("\nAfter delete element");
+		obj.display();
+
+	}
+
+}
+
+OUTPUT:
+
+Enter the element
+2
+8
+1
+2
+2
+-1
+2 2 1 8 2 
+Enter key element
+2
+After delete element
+1 8
+
+`````
