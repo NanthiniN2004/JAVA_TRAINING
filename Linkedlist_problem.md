@@ -1194,3 +1194,106 @@ After delete element
 1 8
 
 `````
+##  Kth to last element of a linked list
+
+````java[]
+
+
+
+import java.util.*;
+class Node{
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+		}
+}
+ class Linkedlist
+{  
+	 Node head;
+	public void insertatbegin(int data)
+	{
+		Node newnode=new Node(data);
+		if(head==null)
+		{
+			head=newnode;
+		}
+		else
+		{
+			newnode.next=head;
+			head=newnode;
+		}
+	}
+	
+	public int kthvalue(Node head,int k)
+	{
+		Node first=head;
+		Node second=head;
+		for(int i=0;i<k;i++)
+		{
+			if(first==null)
+			{
+				return 0;
+			}
+			first=first.next;
+		}
+		while(first!=null)
+		{
+			second=second.next;
+			first=first.next;
+		}
+		return second.data;
+	}
+	
+	public void display()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		Linkedlist obj=new Linkedlist();
+		System.out.println("Enter the element");
+		while(true)
+		{
+			int val=s.nextInt();
+		
+			if(val==-1)
+			{
+				break;
+			}
+		  obj. insertatbegin(val);
+		}
+		obj.display();
+		System.out.println("\nEnter k element");
+		int k=s.nextInt();
+		System.out.println("Kth last element "+obj.kthvalue(obj.head,k));
+
+	}
+
+}
+
+OUTPUT:
+
+Enter the element
+50
+40
+30
+20
+10
+-1
+10 20 30 40 50 
+Enter k element
+2
+Kth last element 40
+````
+
