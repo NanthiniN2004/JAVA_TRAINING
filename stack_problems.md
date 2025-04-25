@@ -119,5 +119,53 @@ Enter the expression
 Balanced
 
 ````
+## Evaluation of Postfix Expression
 
+````java[]
 
+package stack;
+import java.util.*;
+public class Postfixevaluation {
+  public static int postfix(String str[])
+  {
+	  Stack<Integer> st=new Stack<>();
+	  for(String to:str)
+		{
+			if(to=="+" || to=="-" || to=="*"|| to=="/")
+			{
+				int n1=st.peek();
+				st.pop();
+				int n2=st.peek();
+				st.pop();
+				if(to=="+") {
+					st.push(n1+n2);
+				}
+				else if(to=="-") {
+					st.push(n2-n1);
+				}
+				else if(to=="*") {
+					st.push(n1*n2);
+				}
+				else {
+					st.push(n2/n1);
+				}
+				
+			}
+			else {
+				st.push(Integer.parseInt(to));
+			}
+		}
+	  return st.peek();
+  }
+	
+  public static void main(String args[]) {
+	    String postfix[] = {"1","3","-","4","*"};
+	    int value = postfix(postfix);
+	    System.out.println(value);
+	  }
+
+}
+
+OUTPUT:
+-8
+````
