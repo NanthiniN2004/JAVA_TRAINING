@@ -67,3 +67,57 @@ a+b*(c^d-e)^(f+g*h)-i
 After convert postfix expression abcd^e-fgh*+^*+i-
 
 `````
+## Valid Parentheses in an Expression
+
+````java[]
+
+package stack;
+import java.util.*;
+public class Balanceparenthesis {
+  public static boolean check(String str)
+  {
+	  Stack<Character> st=new Stack<>();
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)=='(' || str.charAt(i)=='{' || str.charAt(i)=='[')
+			{
+				st.push(str.charAt(i));
+			}
+			else {
+				if(!st.isEmpty() && ((st.peek()=='(' && str.charAt(i)==')') 
+						|| (st.peek()=='{' && str.charAt(i)=='}')
+						|| (st.peek()=='[' && str.charAt(i)==']'))){
+					st.pop();
+					
+				}
+				else {
+					return false;
+				}
+			}
+		}
+		return st.empty();
+	}  
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the expression");
+		String str=s.next();
+		if(check(str))
+		{
+			System.out.println("Balanced");
+		}
+		else {
+			System.out.println("Not balanced");
+		}
+		
+}
+}
+
+
+OUTPUT:
+Enter the expression
+{([])}
+Balanced
+
+````
+
+
